@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>请登录</title>
+    <!-- import layui js -->
+    <script src="assets/lib/layui/layui.all.js"></script>
+    <!-- import jq -->
+    <script src="assets/lib/jquery.js"></script>
+    <!-- import baseAPI js -->
+    <script src="assets/js/baseAPI.js"></script>
+    <!-- import login js -->
+    <script src="assets/js/login.js"></script>
+    <!-- import layui css -->
+    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <!-- import my css -->
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
+
 <body>
-    
+    <!-- logo area -->
+    <div class="layui-main">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+
+    <!-- login and register area -->
+    <div class="loginAndReg">
+        <!-- box of logo -->
+        <div class="title_logo"></div>
+
+        <!-- box of login -->
+        <div class="login_box">
+
+            <form class="layui-form" id="loginForm">
+                <!-- input element of username -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <!-- Use verify rules -->
+                    <input type="text" name="username" required lay-verify="required|username" placeholder="输入您的账号"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- input element of password -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <!-- Use verify rules -->
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="输入您的密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- submit buttom -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录账户</button>
+                </div>
+
+                <div class="layui-form-item">
+                    <a href="javascript:;" id="link_reg" class="links">还没账号?去注册</a>
+                </div>
+            </form>
+            
+        </div>
+
+        <!-- box of register -->
+        <div class="reg_box">
+            <form class="layui-form" id="registerForm">
+                <!-- input element of username -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <!-- Use verify rules -->
+                    <input type="text" name="username" required lay-verify="required|username" placeholder="输入您的账号"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- input element of password -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <!-- Use verify rules -->
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="输入您的密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- input element of repwd -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <!-- Use verify rules -->
+                    <input type="password" name="repwd" required lay-verify="required|pwd|repwd" placeholder="重新输入您的密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+
+                <!-- submit buttom -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>注册账户</button>
+                </div>
+                
+                <div class="layui-form-item">
+                    <a href="javascript:;" id="link_login" class="links">已有帐号?去登录</a>
+               </div>
+            </form>
+            
+        </div>
+    </div>
 </body>
+
 </html>

@@ -85,6 +85,7 @@ $(function () {
                 }
                 layer.msg('登录成功')
                 // 登录成功时将返回的token令牌保存到本地localstorage中,表示进入系统后获得访问权限允许访问
+                //若想访问有权限的接口就必须在请求头中添加该字段才能正常请求成功
                 localStorage.setItem('token',res.token)
                 //跳转到主页面
                 location.href = 'index.html'

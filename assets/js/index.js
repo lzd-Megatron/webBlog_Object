@@ -1,40 +1,40 @@
-$(function(){
+$(function() {
     // 获取layui的layer对象
     let layer = layui.layer
 
     // 主页一打开就调用函数获取用户信息
-    getuserInfo (layer)
+    getuserInfo()
 
     // 监听退出事件
-    $('#btnLogout').on('click',function(){
-        layer.confirm('确认退出吗?', {icon: 3, title:'温馨提示=V='}, function(index){
+    $('#btnLogout').on('click', function() {
+        layer.confirm('确认退出吗?', { icon: 3, title: '温馨提示=V=' }, function(index) {
             // 跳转到登录页
             location.href = 'login.html'
-            //清空本地存储的token
+                //清空本地存储的token
             localStorage.removeItem('token')
-            
+
             //layui的layer confirm自带的语句用于关闭询问框
             layer.close(index);
-          });
+        });
     })
 })
 
 //封装获取用户信息的函数
-function getuserInfo (layer){
-    
+function getuserInfo() {
+
     $.ajax({
-        method:'get',
-        url:'/my/userinfo',
+        method: 'get',
+        url: '/my/userinfo',
         // headers就是请求头配置对象(根据文档要求传入token令牌内容获取访问用户信息权限)
         //在baseAPI.js中统一设置headers请求头,避免在多次访问需要权限接口时频繁设置请求头
         // headers:{
         //     Authorization: localStorage.getItem('token') || ''
         // },
-        success:function(res){
-            if(res.status !== 0){
-                return layer.msg(res.message)
+        success: function(res) {
+            if (res.status !== 0) {
+                return layui.layer.msg(res.message)
             }
-            layer.msg('欢迎进入主页')
+
             //请求成功则调用渲染用户信息的函数
             renderUserInfo(res.data)
         },
@@ -53,15 +53,15 @@ function getuserInfo (layer){
     })
 }
 
-function renderUserInfo(data){
+function renderUserInfo(data) {
     let name = data.nickname || data.username
     let firstLetter = name[0].toUpperCase()
-    $('.welcome').html('欢迎&nbsp;&nbsp;'+name)
-    if(data.user_pic !== null){
+    $('.welcome').html('欢迎&nbsp;&nbsp;' + name)
+    if (data.user_pic !== null) {
         // 渲染图片头像
-        $('.layui-nav-img').attr('src','data.user_pic').show()
+        $('.layui-nav-img').attr('src', data.user_pic).show()
         $('.user-img').hide()
-    }else{
+    } else {
         //渲染文本头像
         $('.layui-nav-img').hide()
         $('.user-img').html(firstLetter).show()

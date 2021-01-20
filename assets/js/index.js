@@ -68,3 +68,9 @@ function renderUserInfo(data) {
 
     }
 }
+
+function listClick() {
+    //layui的设计a无法被冒泡,所以不要直接通过a的点击事件,要通过i的点击事件冒泡到父级的<dd></dd>的点击
+    // 使页面发生跳转
+    $('#article_list').click()
+}

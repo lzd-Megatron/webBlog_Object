@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
     <!-- 导入 layui css -->
-    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
     <!-- 导入 iconfont css -->
-    <link rel="stylesheet" href="assets/fonts/iconfont.css">
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css">
     <!-- 导入 my css -->
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
-            <img src="assets/images/logo.png" alt="">
+            <img src="/assets/images/logo.png" alt="">
             <!-- 头部区域（可配合layui已有的水平导航） -->
 
             <ul class="layui-nav layui-layout-right">
@@ -48,16 +48,16 @@
                     <!-- add icon -->
                     <li class="layui-nav-item">
                         <!-- target属性: 点击时将href对应页面在name为"fm"的元素中打开,class="layui-this"默认选中-->
-                        <a href="home/dashboard.html" class="layui-this" target="fm">
+                        <a href="/home/dashboard.html" class="layui-this" target="fm">
                             <i class="iconfont icon-home"></i>首页
                         </a>
                     </li>
                     <li class="layui-nav-item">
                         <a class="" href="javascript:;"><i class="iconfont icon-16"></i>文章管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
+                            <dd><a href="/article/article_cate.html" target="fm"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+                            <dd><a href="/article/article_list.html" target="fm"><i class="layui-icon layui-icon-app" id="article_list"></i>文章列表</a></dd>
+                            <dd><a href="/article/article_publish.html" target="fm"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -75,7 +75,7 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <!-- 指定src默认在iframe中打开该路径文件 -->
-            <iframe name="fm" src="home/dashboard.html" frameborder="0"></iframe>
+            <iframe name="fm" src="/home/dashboard.html" frameborder="0"></iframe>
         </div>
 
         <div class="layui-footer">
@@ -85,13 +85,13 @@
     </div>
 
     <!-- 导入 layui js -->
-    <script src="assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 导入 jq -->
-    <script src="assets/lib/jquery.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
     <!-- 导入baseAPI.js -->
-    <script src="assets/js/baseAPI.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
     <!-- 导入index.js -->
-    <script src="assets/js/index.js"></script>
+    <script src="/assets/js/index.js"></script>
 
 </body>
 
